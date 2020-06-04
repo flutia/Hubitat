@@ -1,9 +1,9 @@
 /**
- * DAWON DNS Smart Plug 16A for Hubitat - v1.0.1
+ * DAWON DNS Smart Plug 16A for Hubitat - v1.0.2
  *
  *  github: Euiho Lee (flutia)
  *  email: flutia@naver.com
- *  Date: 2020-05-28
+ *  Date: 2020-06-04
  *  Copyright flutia and stsmarthome (cafe.naver.com/stsmarthome/)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -38,8 +38,8 @@ metadata {
             input name: 'prefIsReportSet', type:'bool', title: 'Enable reporting', defaultValue: false
             input name: 'prefIntervalMin', type:'number', title: 'Minimum interval (seconds) between reports:', defaultValue: 5, range: '1..600', required: false
             input name: 'prefIntervalMax', type:'number', title: 'Maximum interval (seconds) between reports:', defaultValue: 60, range: '1..600', required: false
-            input name: 'prefMinDeltaPower', type:'enum', title: 'Amount of power change required to trigger a report:', options: ['1', '5', '10', '15', '25', '50'], defaultValue: '1', required: false
-            input name: 'prefMinDeltaEnergy', type:'enum', title: 'Amount of energy change(Wh) required to trigger a report:', options: ['1', '2', '3', '5', '10', '20'], defaultValue: '1', required: false
+            input name: 'prefMinDeltaPower', type:'enum', title: 'Amount of power change (W) required to trigger a report:', options: ['1', '5', '10', '15', '25', '50'], defaultValue: '1', required: false
+            input name: 'prefMinDeltaEnergy', type:'enum', title: 'Amount of energy change (Wh) required to trigger a report:', options: ['1', '2', '3', '5', '10', '20'], defaultValue: '1', required: false
         }
         section() {
             input name: 'prefIsDebugEnabled', type: 'bool', title: 'Enable debug logging', defaultValue: false
@@ -94,6 +94,9 @@ def installed() {
 }
 
 def uninstalled() {
+    logD('uninstalled')
+    // 리포팅을 해제한다.
+    return getConfigureCommand(false)
 }
 
 def updated() {
@@ -103,15 +106,18 @@ def updated() {
 
 def configure() {
     logD('configure')
+    return getConfigureCommand(prefIsReportSet)
+}
 
+def getConfigureCommand(isReportEnabled) {
     Integer intervalMin = 0
     Integer intervalMax = 0
     Integer minDeltaPower = 0
     Integer minDeltaEnergy = 0
-    if (prefIsReportSet) {
+    if (isReportEnabled) {
         intervalMin = prefIntervalMin
         intervalMax = prefIntervalMax
-        minDeltaV = Integer.parseInt(prefMinDeltaPower)
+        minDeltaPower = Integer.parseInt(prefMinDeltaPower)
         minDeltaEnergy = Integer.parseInt(prefMinDeltaEnergy)
         logI("Configuring - intervalMin:${intervalMin}, intervalMax:${intervalMax}, amount of power change:${minDeltaPower}, amount of energy change:${minDeltaEnergy}")
     } else {
@@ -173,4 +179,3 @@ void logW(String msg) {
 void logE(String msg) {
     log.error(msg)
 }
-
