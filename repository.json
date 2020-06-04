@@ -1,0 +1,14 @@
+{
+	"author": "flutia",
+	"gitHubUrl": "https://github.com/flutia/Hubitat",
+	"payPalUrl": "",
+	"packages": [
+		{
+			"name": "DAWON DNS Smart Plugs",
+			"category": "Control",
+			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlug/packageManifest.json",
+			"description": "DAWON DNS Smart Plugs (Zigbee 16A/10A)"
+		}
+	]
+	
+}
