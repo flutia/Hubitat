@@ -1,5 +1,5 @@
 /**
- * DAWON DNS Smart Plug 10A for Hubitat - v1.0.0
+ * DAWON DNS Smart Plug 10A for Hubitat - v1.0.1
  *
  *  github: Euiho Lee (flutia)
  *  email: flutia@naver.com

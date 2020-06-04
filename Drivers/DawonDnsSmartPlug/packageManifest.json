@@ -1,7 +1,7 @@
 {
   "packageName": "DAWON DNS Smart Plug",
   "author": "flutia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minimumHEVersion": "2.2.0",
   "dateReleased": "2020-06-05",
   "drivers": [
@@ -10,6 +10,13 @@
       "name": "DAWON DNS Smart Plug 16A",
       "namespace": "flutia",
       "location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlug/DawonDnsSmartPlug16A.groovy",
+      "required": false
+    },
+    {
+      "id": "742e2a92-b6af-4d96-9fb2-4d656eee71a5",
+      "name": "DAWON DNS Smart Plug 16A",
+      "namespace": "flutia",
+      "location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlug/DawonDnsSmartPlug10A.groovy",
       "required": false
     }
   ]

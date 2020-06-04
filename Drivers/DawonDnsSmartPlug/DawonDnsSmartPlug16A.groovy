@@ -1,5 +1,5 @@
 /**
- * DAWON DNS Smart Plug 16A for Hubitat - v1.0.0
+ * DAWON DNS Smart Plug 16A for Hubitat - v1.0.1
  *
  *  github: Euiho Lee (flutia)
  *  email: flutia@naver.com
@@ -32,15 +32,14 @@ metadata {
 
         // 0B04 cluster를 지원하지만 실제로는 지원되는 attribute가 없는 것으로 보인다.
         fingerprint profileId: '0104', inClusters: '0000,0002,0003,0004,0006,0019,0702,0B04,0008,0009', outClusters: '0000,0002,0003,0004,0006,0019,0702,0B04,0008,0009', model: 'PM-B530-ZB', manufacturer:'DAWON_DNS', deviceJoinName: 'DAWON DNS Smart Plug 16A'
-        fingerprint profileId: '0104', inClusters: '0000,0004,0003,0006,0019,0702,0B04', outClusters: '0000,0004,0003,0006,0019,0702,0B04', model: 'PM-B430-ZB', manufacturer:'DAWON_DNS', deviceJoinName: 'DAWON DNS Smart Plug 10A'
     }
     preferences {
         section() {
             input name: 'prefIsReportSet', type:'bool', title: 'Enable reporting', defaultValue: false
-            input name: 'prefIntervalMin', type:'number', title: 'Minimum interval (seconds) between power reports:', defaultValue: 5, range: '1..600', required: false
-            input name: 'prefIntervalMax', type:'number', title: 'Maximum interval (seconds) between power reports:', defaultValue: 60, range: '1..600', required: false
+            input name: 'prefIntervalMin', type:'number', title: 'Minimum interval (seconds) between reports:', defaultValue: 5, range: '1..600', required: false
+            input name: 'prefIntervalMax', type:'number', title: 'Maximum interval (seconds) between reports:', defaultValue: 60, range: '1..600', required: false
             input name: 'prefMinDeltaPower', type:'enum', title: 'Amount of power change required to trigger a report:', options: ['1', '5', '10', '15', '25', '50'], defaultValue: '1', required: false
-            input name: 'prefMinDeltaEnergy', type:'enum', title: 'Amount of energy change required to trigger a report:', options: ['1', '2', '3', '5', '10', '20'], defaultValue: '1', required: false
+            input name: 'prefMinDeltaEnergy', type:'enum', title: 'Amount of energy change(Wh) required to trigger a report:', options: ['1', '2', '3', '5', '10', '20'], defaultValue: '1', required: false
         }
         section() {
             input name: 'prefIsDebugEnabled', type: 'bool', title: 'Enable debug logging', defaultValue: false
