@@ -4,10 +4,16 @@
 	"payPalUrl": "",
 	"packages": [
 		{
-			"name": "DAWON DNS Smart Plugs",
+			"name": "DAWON DNS Smart Plug - 16A",
 			"category": "Control",
-			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlug/packageManifest.json",
-			"description": "DAWON DNS Smart Plugs (Zigbee 16A/10A)"
+			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlug16A/packageManifest.json",
+			"description": "DAWON DNS Smart Plugs (Zigbee 16A)"
+        },
+        {
+			"name": "DAWON DNS Smart Plug - 10A",
+			"category": "Control",
+			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlug10A/packageManifest.json",
+			"description": "DAWON DNS Smart Plugs (Zigbee 10A)"
 		}
 	]
 	
