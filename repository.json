@@ -7,7 +7,13 @@
 			"name": "DAWON DNS Smart Plugs",
 			"category": "Control",
 			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlugs/packageManifest.json",
-			"description": "DAWON DNS Smart Plugs (Zigbee 16A/10A)"
+			"description": "DAWON DNS Smart Plugs (Zigbee, 16A/10A)"
+		},
+		{
+			"name": "eZEX C2O Smart Socket",
+			"category": "Control",
+			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/EzexSmartSocket/packageManifest.json",
+			"description": "eZEX C2O Smart Socket (Zigbee, 2 sockets)"
         }
 	]
 	
