@@ -1,5 +1,5 @@
 /*
- * eZEX C2O Power Outlet for Hubitat (2 sockets, E210-KR210Z1-HA) - v1.0.0
+ * eZEX C2O Smart Socket for Hubitat (2 sockets, E210-KR210Z1-HA) - v1.0.0
  *  
  *  github: Euiho Lee (flutia)
  *  email: flutia@naver.com
