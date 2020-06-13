@@ -1,9 +1,9 @@
 /*
- * eZEX C2O Smart Socket for Hubitat (2 sockets, E210-KR210Z1-HA) - v1.0.0
+ * eZEX C2O Smart Socket for Hubitat (2 sockets, E210-KR210Z1-HA) - v1.0.1
  *
  *  github: Euiho Lee (flutia)
  *  email: flutia@naver.com
- *  Date: 2020-06-08
+ *  Date: 2020-06-13
  *  Copyright flutia and stsmarthome (cafe.naver.com/stsmarthome/)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -142,11 +142,11 @@ def parse(String description) {
             if (attrId == '0510') {  // 역률
                 def powerFactor = zigbee.convertHexToInt(parseMap.value)
                 logI("powerFactor: ${powerFactor}")
-                eventStack.push(createEvent( name: 'powerFactor', value: powerFactor))
+                eventStack.push(createEvent( name: 'powerFactor', value: powerFactor, unit: '%'))
             } else if (attrId == '050B') {  // 전력(W)
-                def activePower = zigbee.convertHexToInt(parseMap.value)
+                def activePower = zigbee.convertHexToInt(parseMap.value) / 10
                 logI("power: ${activePower}")
-                eventStack.push(createEvent( name: 'power', value: activePower))
+                eventStack.push(createEvent( name: 'power', value: activePower, unit: 'W'))
             }
         } else if (clusterId == '0702') {
             def renewWatt = false
@@ -360,7 +360,7 @@ def getConfigureCommand() {
     logI("Configuring - intervalMin:${intervalMin}, intervalMax:${intervalMax}, amount of power change:${minDeltaPower}, amount of energy change:${minDeltaEnergy}")
 
     def onOffConfig = zigbee.onOffConfig(intervalMin, intervalMax)
-    def powerConfig = zigbee.configureReporting(0x0B04, 0x050B, 0x28, intervalMin, intervalMax, minDeltaPower) // 전력
+    def powerConfig = zigbee.configureReporting(0x0B04, 0x050B, 0x28, intervalMin, intervalMax, minDeltaPower * 10) // 전력
     def powerFactorConfig = zigbee.configureReporting(0x0B04, 0x0510, 0x28, intervalMin, intervalMax, 1) // 역률
     def energyConfig = zigbee.configureReporting(0x0702, 0x0000, 0x25, intervalMin, intervalMax, minDeltaEnergy) // 전체 전력
     def lineCurrentConfig = zigbee.configureReporting(0x0702, 0x0901, 0x22, intervalMin, intervalMax, minDelteLineCurrent) // 전류

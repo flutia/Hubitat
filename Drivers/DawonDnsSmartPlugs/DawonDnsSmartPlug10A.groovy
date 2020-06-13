@@ -1,9 +1,9 @@
 /**
- * DAWON DNS Smart Plug 10A for Hubitat - v1.0.1
+ * DAWON DNS Smart Plug 10A for Hubitat - v1.0.2
  *
  *  github: Euiho Lee (flutia)
  *  email: flutia@naver.com
- *  Date: 2020-06-05
+ *  Date: 2020-06-13
  *  Copyright flutia and stsmarthome (cafe.naver.com/stsmarthome/)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -36,9 +36,9 @@ metadata {
     preferences {
         section() {
             input name: 'prefIsReportSet', type:'bool', title: 'Enable reporting', defaultValue: false
-            input name: 'prefIntervalPower', type:'number', title: 'Interval (seconds) between power reports:', defaultValue: 15, range: '10..600', required: false
-            input name: 'prefIntervalMin', type:'number', title: 'Minimum interval (seconds) between reports(switch and energy):', defaultValue: 5, range: '1..600', required: false
-            input name: 'prefIntervalMax', type:'number', title: 'Maximum interval (seconds) between reports(switch and energy):', defaultValue: 60, range: '1..600', required: false
+            input name: 'prefIntervalPower', type:'number', title: 'Interval (seconds) between power reports:', defaultValue: 30, range: '10..600', required: false
+            input name: 'prefIntervalMin', type:'number', title: 'Minimum interval (seconds) between reports(switch and energy):', defaultValue: 30, range: '1..600', required: false
+            input name: 'prefIntervalMax', type:'number', title: 'Maximum interval (seconds) between reports(switch and energy):', defaultValue: 300, range: '1..600', required: false
             input name: 'prefMinDeltaEnergy', type:'enum', title: 'Amount of energy change required to trigger a report:', options: ['1', '2', '3', '5', '10', '20'], defaultValue: '1', required: false
         }
         section() {

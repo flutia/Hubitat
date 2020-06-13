@@ -2,14 +2,14 @@
   "packageName": "eZEX C2O Smart Socket",
   "author": "flutia",
   "minimumHEVersion": "2.2.0",
-  "dateReleased": "2020-06-05",
+  "dateReleased": "2020-06-13",
   "drivers": [
     {
       "id": "aa6c2e6e-a993-11ea-bb37-0242ac130002",
       "name": "eZEX Smart Socket",
       "namespace": "flutia",
       "location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/EzexSmartSocket/EzexSmartSocket.groovy",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "required": false
     }
   ]
