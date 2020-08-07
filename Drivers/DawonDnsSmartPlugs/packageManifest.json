@@ -9,7 +9,7 @@
       "name": "DAWON DNS Smart Plug 16A",
       "namespace": "flutia",
       "location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsSmartPlugs/DawonDnsSmartPlug16A.groovy",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "required": false
     },
     {

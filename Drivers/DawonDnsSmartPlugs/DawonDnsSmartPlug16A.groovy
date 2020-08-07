@@ -1,9 +1,9 @@
 /**
- * DAWON DNS Smart Plug 16A for Hubitat - v1.0.3
+ * DAWON DNS Smart Plug 16A for Hubitat - v1.0.4
  *
  *  github: Euiho Lee (flutia)
  *  email: flutia@naver.com
- *  Date: 2020-06-13
+ *  Date: 2020-08-07
  *  Copyright flutia and stsmarthome (cafe.naver.com/stsmarthome/)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -32,6 +32,7 @@ metadata {
 
         // 0B04 cluster를 지원하지만 실제로는 지원되는 attribute가 없는 것으로 보인다.
         fingerprint profileId: '0104', inClusters: '0000,0002,0003,0004,0006,0019,0702,0B04,0008,0009', outClusters: '0000,0002,0003,0004,0006,0019,0702,0B04,0008,0009', model: 'PM-B530-ZB', manufacturer:'DAWON_DNS', deviceJoinName: 'DAWON DNS Smart Plug 16A'
+        fingerprint profileId: '0104', inClusters: '0000,0002,0003,0006,0702,0B04', outClusters: '0003,0019', model: 'PM-B540-ZB', manufacturer:'DAWON_DNS', deviceJoinName: 'DAWON DNS Smart Plug 16A'
     }
     preferences {
         section() {

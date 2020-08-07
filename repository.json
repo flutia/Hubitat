@@ -14,6 +14,12 @@
 			"category": "Control",
 			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/EzexSmartSocket/packageManifest.json",
 			"description": "eZEX C2O Smart Socket (Zigbee, 2 sockets)"
+		},
+		{
+			"name": "DAWON DNS Light Switch",
+			"category": "Control",
+			"location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsLightSwitch/packageManifest.json",
+			"description": "DAWON DNS Light Switch"
         }
 	]
 	
