@@ -6,7 +6,7 @@
   "drivers": [
     {
       "id": "07a597ac-fb39-4bc5-be93-daca9a4ef7f3",
-      "name": "DAWON DNS Light Switch",
+      "name": "DAWON DNS Light Switch (STS)",
       "namespace": "flutia",
       "location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsLightSwitch/DawonDnsLightSwitch.groovy",
       "version": "1.1.1",
@@ -14,7 +14,7 @@
     },
     {
       "id": "5c091aeb-2a93-416b-bd8c-14dcb48955ab",
-      "name": "DAWON DNS Light Switch (Child Device)",
+      "name": "DAWON DNS Light Switch Child Device (STS)",
       "namespace": "flutia",
       "location": "https://raw.githubusercontent.com/flutia/Hubitat/master/Drivers/DawonDnsLightSwitch/DawonDnsLightSwitchChildDevice.groovy",
       "version": "1.1.0",
